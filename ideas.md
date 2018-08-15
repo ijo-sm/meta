@@ -15,51 +15,51 @@ The plugin system will allow for the usage of multiple programming language to c
 
 ### Downloading a plugin
 ```text
-Store										Panel										Machine
-  |							  	  		  	  |							  	   		       |
-  |	<- The panel requests to download a ----1-|											   |
-  |    plugin from the store.				  |											   |
-  |										  	  |											   |
-  |-2- The store returns the plugin, but ---> |											   |
-  |	   compressed.						      |											   |
-  |											  |											   |
-  |								 3 - The panel decompresses								   |
-  |										 the plugin.									   |
-  |											  |											   |
-  |											  |-4- The panel sends the part for the -----> |
-  |											  |    machine to the machine.				   |
-  |											  |											   |
-  |						  	    5 - The panel calls the panel 							   |
-  |							  initialization part of the plugin.						   |
-  |											  |											   |
-  |											  |			   6 - The machine calls the machine
-  |											  |			   initialization part of the plugin
-  |											  |											   |
-  |											  | <- The machine sends back a message -----7-|
-  |											  |    the plugin initialized succesfully      |
-  |											  |    or had an error.						   |
-  |											  |											   |
+Store                                       Panel                                       Machine
+  |                                           |                                            |
+  | <- The panel requests to download a ----1-|                                            |
+  |    plugin from the store.                 |                                            |
+  |                                           |                                            |
+  |-2- The store returns the plugin, but ---> |                                            |
+  |    compressed.                            |                                            |
+  |                                           |                                            |
+  |                              3 - The panel decompresses                                |
+  |                                      the plugin.                                       |
+  |                                           |                                            |
+  |                                           |-4- The panel sends the part for the -----> |
+  |                                           |    machine to the machine.                 |
+  |                                           |                                            |
+  |                             5 - The panel calls the panel                              |
+  |                           initialization part of the plugin.                           |
+  |                                           |                                            |
+  |                                           |            6 - The machine calls the machine
+  |                                           |            initialization part of the plugin
+  |                                           |                                            |
+  |                                           | <- The machine sends back a message -----7-|
+  |                                           |    the plugin initialized succesfully      |
+  |                                           |    or had an error.                        |
+  |                                           |                                            |
 ```
 The same process is used when updating a plugin.
 
 ### Starting a plugin
 ```text
-Panel										Interface								    Plugin
-  |											    |										   |
-  |-1- The panel starts by using the engine --> |										   |
-  |	   to start the interface.					|										   |
-  |												|										   |
-  |												|-2- The interface calls the startup ----> |
-  | 											|	 function in the plugin.			   |
-  |												|										   |
-  |												| <- The plugin calls the interface to --3-|
-  |												|	 create instances or cause other       |
-  |												|    events that will be passed through    |
-  |												|    to the panel.					   	   |
-  |												|										   |
-  |	<- The interface will call the panel -----4-|										   |
-  |	   there was an event caused by the plugin. |										   |
-  |											    |										   |
+Panel                                       Interface                                   Plugin
+  |                                             |                                          |
+  |-1- The panel starts by using the engine --> |                                          |
+  |    to start the interface.                  |                                          |
+  |                                             |                                          |
+  |                                             |-2- The interface calls the startup ----> |
+  |                                             |         function in the plugin.          |
+  |                                             |                                          |
+  |                                             | <- The plugin calls the interface to --3-|
+  |                                             |    create instances or cause other       |
+  |                                             |    events that will be passed through    |
+  |                                             |    to the panel.                         |
+  |                                             |                                          |
+  | <- The interface will call the panel -----4-|                                          |
+  |    there was an event caused by the plugin. |                                          |
+  |                                             |                                          |
 ```
 The same 2 first steps are used when stopping the plugin.
 
@@ -69,15 +69,15 @@ A flow is a server pipeline. These pipelines are used to manage servers.
 
 ### Load balancer
 ```text
-											Gateway
-									 everything on port 80
-								   with domain: example.com
-								   to 8080 or 8081 or 8082
-											   |
-				     |-------------------------|-------------------------|
-				     |						   |						 |
-				  Server					 Server					   Server
-			   on port 8080				  on port 8081				on port 8082
+                                             Gateway
+                                       everything on port 80
+                                      with domain: example.com
+                                      to 8080 or 8081 or 8082
+                                                |
+                      |-------------------------|-------------------------|
+                      |                         |                         |
+                    Server                    Server                    Server
+                 on port 8080              on port 8081              on port 8082
 ```
 
 ### Container
