@@ -10,6 +10,9 @@ Static webserver
 ```
 Using such a flowchart we make it very easy for not just developer but also less programming-savvy users to understand what is happening, as such flowchart perfectly describes the experience for those using the webserver. As lines in most cases describe sockets they almost always have an orientation, as seen in the example.
 
+## Propagator
+These are a special kind of boxes that are the start of data transfer. This will, in the most cases, be the gateway. It could also be cron job, sending a start signal to another service.
+
 ## Load balancer
 This is an example of what a flowchart for gateways should look like:
 ```text

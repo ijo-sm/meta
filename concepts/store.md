@@ -5,7 +5,7 @@ The store acts as a repository for [plugins](./plugin.md), where [users](./users
 In the [dashboard](./dashboard.md) there is a page from where users can access the verified plugins from the store. 
 
 ## Website
-It might be nice to have a website that displays the plugins that are in development, tracking their progress via git. This can also be used to track the verification status of plugins.
+It might be nice to have a website that displays the plugins that are in development, tracking their progress via git. This can also be used to track the verification status of plugins. Plugins can also be downloaded from the website and than manually installed onto a dashboard.
 
 ## Verification
 Plugins that appear on the dashboard store page should be verified before be allowed to be seen there. This is because while uploading plugins should be available for everyone, non-experienced users will put trust in the quality of the store page. It may also be a good idea to in a later stage automatically verify updates of plugins that are available trough the store page. A possible workflows for verifying:
