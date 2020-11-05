@@ -1,2 +1,2 @@
 # Dashboard
-The dashboard serves as the controller for [machines](./machine.md) as well as an interface for users. Thus it can be seen as the brains of IJO. 
+The dashboard serves as the controller for [machines](./machine.md) as well as an interface for users. Thus it can be seen as the brains of IJO. The dashboard acts as maximal node of a hierarchical tree structure, where all lower nodes are machine instances. This makes it possible for machines to, using containerization, run in other machines.
