@@ -1,0 +1,2 @@
+# Plugin
+A plugin is a piece of code that uses the IJO [dashboard](./dashboard.md) or [machine](./machine.md) interfaces to add functionality to IJO. This can be very high-level functionalities like containerization or small additions like adding support for some custom database service.
