@@ -18,6 +18,12 @@ plugin.json
 ## Environments
 Because some plugins might not work on all operating systems a plugin can specify different source files for different environments. It can also specify which parts of the plugin only have to be included for that environment.
 
+## Smart metadata
+It is also preferred to include metadata in the plugin config file about what [blocks](./flow.md) and line handler are included in the plugin.
+
+## Versions
+All plugins should update plugins with version numbers. This helps the store to keep track of metadata that changes per function. If a user is using a block in one of his/her flows and an update removes that block the user should know it is impossible to update without changing the old flow.
+
 ## Downloading a plugin
 This show how a plugin is downloaded (or updated):
 ```text
