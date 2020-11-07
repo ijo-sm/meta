@@ -19,12 +19,12 @@ These are a special kind of boxes that are the start of data transfer. This will
 ## Load balancer
 This is an example of what a flowchart for gateways should look like:
 ```text
-						     ---
-							  | (port 80)
-							  | 
-						     \./
-	|-------------------Load balancer-------------------|
-	|                         |                         |
+                             ---
+                              | (port 80)
+                              | 
+                             \./
+    |-------------------Load balancer-------------------|
+    |                         |                         |
    \./                       \./                       \./
   Server                    Server                    Server
 on port 8080             on port 8081              on port 8082
@@ -33,15 +33,15 @@ on port 8080             on port 8081              on port 8082
 ## Container
 And this an example of a flow that goes into a container. The part of the flow inside the container might also be seen from the machine running in the container, if that is enabled.
 ```text
-					  ---
-					   | 
-	+------------------|-(port 8080)------+
-	|                  | (port 80)        |
-	|                  |                  |
-	|                 \./                 |
-	|               Server                |
-	|             on port 80              |
-	|                                     |
-	+-------------------------------------+
+                      ---
+                       | 
+    +------------------|-(port 8080)------+
+    |                  | (port 80)        |
+    |                  |                  |
+    |                 \./                 |
+    |               Server                |
+    |             on port 80              |
+    |                                     |
+    +-------------------------------------+
 ```
 How containers will be implemented is as of yet to be seen. Running a machine instance in every container will take to much computation. It might be better to just observe the container from the outside. What control that gives for blocks inside of the container is, in that case, doubtful.
